@@ -35,16 +35,25 @@ public class MainAppController {
     }
 
     @FXML
-    private BorderPane mainWrapper;
-
-    @FXML
-    void actionFollowing(ActionEvent event) {
-        showScene("Following");
+    void actionMyToots(ActionEvent event) {
+        showScene("Toots");
     }
 
     @FXML
     void actionFollowers(ActionEvent event) {
         showScene("Followers");
+    }
+
+    @FXML
+    private BorderPane mainWrapper;
+
+    @FXML
+    void initialize() {
+        followingWin = load("following.fxml");
+        followersWin = load("followers.fxml");
+        tootsWin = load("toots.fxml");
+
+        showScene("Toots");
     }
 
     private void showScene(String scene) {
@@ -56,18 +65,7 @@ public class MainAppController {
     }
 
     @FXML
-    void actionMyToots(ActionEvent event) {
-        showScene("Toots");
+    void actionFollowing(ActionEvent event) {
+        showScene("Following");
     }
-
-    @FXML
-    void initialize() {
-        followingWin = load("following.fxml");
-        followersWin = load("followers.fxml");
-        tootsWin = load("toots.fxml");
-
-        showScene("Toots");
-
-    }
-
 }
