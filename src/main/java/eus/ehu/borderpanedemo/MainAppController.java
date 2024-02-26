@@ -35,6 +35,9 @@ public class MainAppController {
     }
 
     @FXML
+    private BorderPane mainWrapper;
+
+    @FXML
     void actionMyToots(ActionEvent event) {
         showScene("Toots");
     }
@@ -45,7 +48,9 @@ public class MainAppController {
     }
 
     @FXML
-    private BorderPane mainWrapper;
+    void actionFollowing(ActionEvent event) {
+        showScene("Following");
+    }
 
     @FXML
     void initialize() {
@@ -64,8 +69,4 @@ public class MainAppController {
         }
     }
 
-    @FXML
-    void actionFollowing(ActionEvent event) {
-        showScene("Following");
-    }
 }
