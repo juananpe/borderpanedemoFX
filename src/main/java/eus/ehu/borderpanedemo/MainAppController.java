@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 
 import java.io.*;
 
+import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 
 
@@ -36,6 +37,8 @@ public class MainAppController {
 
     @FXML
     private BorderPane mainWrapper;
+    @FXML
+    private Label messageLbl;
 
     @FXML
     void actionMyToots(ActionEvent event) {
@@ -54,6 +57,10 @@ public class MainAppController {
 
     @FXML
     void initialize() {
+
+        // bind message label to BusinessLogic.currentUser
+        messageLbl.textProperty().bind(BusinessLogic.currentUserProperty());
+
         followingWin = load("following.fxml");
         followersWin = load("followers.fxml");
         tootsWin = load("toots.fxml");
